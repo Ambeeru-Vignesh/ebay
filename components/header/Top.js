@@ -8,7 +8,7 @@ import { useState } from "react";
 import UserMenu from "./UserMenu";
 
 const Top = () => {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [session, setSession] = useState(false);
 
   return (
     <div className={styles.top}>
@@ -53,7 +53,7 @@ const Top = () => {
                 </div>
               </li>
             )}
-            <UserMenu loggedIn={loggedIn} />
+            <UserMenu session={session} />
           </li>
         </ul>
       </div>

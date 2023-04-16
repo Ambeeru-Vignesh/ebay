@@ -2,11 +2,11 @@ import React from "react";
 import styles from "./styles.module.scss";
 import Link from "next/link";
 
-const UserMenu = ({ loggedIn }) => {
+const UserMenu = ({ session }) => {
   return (
     <div className={styles.menu}>
       <h4>Welcome to ebay!</h4>
-      {loggedIn ? (
+      {session ? (
         <div className={styles.flex}>
           <img
             src="https://www.clipartmax.com/png/middle/194-1941988_circle-profile-by-pdogkasper-cartoon.png"
