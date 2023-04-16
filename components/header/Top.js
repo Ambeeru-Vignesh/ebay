@@ -36,7 +36,7 @@ const Top = () => {
             </Link>
           </li>
           <li>
-            {loggedIn ? (
+            {session ? (
               <li className={styles.li}>
                 <div className={styles.flex}>
                   <RiAccountPinCircleLine />
