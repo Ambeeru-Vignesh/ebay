@@ -40,7 +40,7 @@ const Top = () => {
               <li className={styles.li}>
                 <div className={styles.flex}>
                   <RiAccountPinCircleLine />
-                  <span>Vignesh</span>
+                  <span>Hanuman</span>
                   <RiArrowDropDownFill />
                 </div>
               </li>
