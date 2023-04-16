@@ -5,8 +5,11 @@ import { BsSuitHeart } from "react-icons/bs";
 import { RiAccountPinCircleLine, RiArrowDropDownFill } from "react-icons/ri";
 import Link from "next/link";
 import { useState } from "react";
+import UserMenu from "./UserMenu";
 
 const Top = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
+
   return (
     <div className={styles.top}>
       <div className={styles.top__container}>
@@ -32,12 +35,25 @@ const Top = () => {
               <span>Whishlist</span>
             </Link>
           </li>
-          <li className={styles.li}>
-            <div className={styles.flex}>
-              <RiAccountPinCircleLine />
-              <span>Account</span>
-              <RiArrowDropDownFill />
-            </div>
+          <li>
+            {loggedIn ? (
+              <li className={styles.li}>
+                <div className={styles.flex}>
+                  <RiAccountPinCircleLine />
+                  <span>Vignesh</span>
+                  <RiArrowDropDownFill />
+                </div>
+              </li>
+            ) : (
+              <li className={styles.li}>
+                <div className={styles.flex}>
+                  <RiAccountPinCircleLine />
+                  <span>Account</span>
+                  <RiArrowDropDownFill />
+                </div>
+              </li>
+            )}
+            <UserMenu loggedIn={loggedIn} />
           </li>
         </ul>
       </div>
