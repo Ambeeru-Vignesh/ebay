@@ -6,7 +6,7 @@
 .ad {
     height: 54px;
     width: 100%;
-    background-image: url("../../public/images/ad.jpg");
+    background-image: url("../../public/images/ad.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -52,8 +52,8 @@
             }
 
             img {
-                width: 28px;
-                height: 28px;
+                width: 28px !important;
+                height: 28px !important;
                 object-fit: cover;
                 border-radius: 50%;
             }
@@ -223,5 +223,34 @@
                 fill: #fff;
             }
         }
+    }
+}
+
+.cart {
+    position: relative;
+
+    svg {
+        width: 35px;
+        height: 25px;
+        fill: #666;
+        cursor: pointer;
+
+        &:hover {
+            fill: $blue-color;
+        }
+    }
+
+    span {
+        position: absolute;
+        top: -5px;
+        right: -10px;
+        background-color: $blue-color;
+        width: 23px;
+        height: 23px;
+        border-radius: 70px;
+        display: grid;
+        place-items: center;
+        font-weight: 600;
+        color: #fff;
     }
 }

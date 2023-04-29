@@ -8,7 +8,8 @@ import { useState } from "react";
 import UserMenu from "./UserMenu";
 
 const Top = () => {
-  const [session, setSession] = useState(false);
+  const [session, setSession] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   return (
     <div className={styles.top}>
@@ -35,11 +36,18 @@ const Top = () => {
               <span>Whishlist</span>
             </Link>
           </li>
-          <li>
+          <li
+            onMouseOver={() => setVisible(true)}
+            onMouseLeave={() => setVisible(false)}
+          >
             {session ? (
               <li className={styles.li}>
                 <div className={styles.flex}>
-                  <RiAccountPinCircleLine />
+                  <img
+                    src="https://www.clipartmax.com/png/middle/194-1941988_circle-profile-by-pdogkasper-cartoon.png"
+                    alt=""
+                    className={styles.menu__img}
+                  />
                   <span>Hanuman</span>
                   <RiArrowDropDownFill />
                 </div>
@@ -53,7 +61,7 @@ const Top = () => {
                 </div>
               </li>
             )}
-            <UserMenu session={session} />
+            {visible && <UserMenu session={session} />}
           </li>
         </ul>
       </div>
